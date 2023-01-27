@@ -11,6 +11,6 @@
 s = int(input('Общее количество журавликов: '))
 if s%6==0:
     boys_cranes = s // 6
-    kate_cranes = boysCranes * 4
+    kate_cranes = boys_cranes * 4
     print(f'Петя - {boys_cranes}, Катя - {kate_cranes}, Серёжа - {boys_cranes}')
 else: print('Часть журавликов потерялась - невозможно распределить поделки согласно условию задачи')
