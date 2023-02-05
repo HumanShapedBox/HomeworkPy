@@ -44,9 +44,15 @@ score_cyr = \
     }
 
 world = input('Введите слово: ').upper()
-print(world)
+total_score = 0
 if world.isascii() == True:
-    total_score = sum([i for letter in world for i, symbol in score_lat.items() if letter in symbol])
+    for letter in world:
+        for i in score_lat:
+            if letter in score_lat[i]:
+                total_score += i
 else:
-    total_score = sum([i for letter in world for i, symbol in score_cyr.items() if letter in symbol])
+    for letter in world:
+        for i in score_cyr:
+            if letter in score_cyr[i]:
+                total_score += i
 print(f'Слово "{world}" набирает {total_score} очков')
