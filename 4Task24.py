@@ -13,3 +13,14 @@
 # 4 -> 1 2 3 4
 # 9
 
+from random import randint
+
+bush = int(input('Количество кустов на грядке: '))
+my_garden = [randint(1, 10) for i in range(bush)]
+max_berries = my_garden[-2] + my_garden[-1] + my_garden[0]
+for i in range(-1, len(my_garden)-2):
+    if max_berries < my_garden[i] + my_garden[i+1] + my_garden[i+2]:
+        max_berries = my_garden[i] + my_garden[i+1] + my_garden[i+2]
+        i += 1
+print(my_garden)
+print(max_berries)
