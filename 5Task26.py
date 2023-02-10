@@ -12,7 +12,20 @@ def expo (n, m):
 a = int(input('Введите число: '))
 b = int(input('Введите степень: '))
 a_expo = expo(a, b)
-if b > 0:
+if a > 0 and b > 0:
     print(a_expo)
-else:
+elif a > 0 and b < 0:
     print(1 / a_expo)
+elif a < 0 and b > 0 and b % 2 == 0:
+    print(a_expo * -1)
+elif a < 0 and b < 0:
+    if b % 2 == 0:
+        print(-1 / a_expo)
+    else:
+        print(1 / a_expo)
+elif b == 0 and a !=0:
+    print(1)
+elif a == 0 and b !=0:
+    print(0)
+else:
+    print('Выражение не имеет смысла')
