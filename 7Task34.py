@@ -13,8 +13,8 @@ poem = input('Стихотворение Винни: ').lower().replace('-', '')
 only_vowels = []
 for i in range(len(poem)):
     only_vowels.append(list(filter(lambda i: i in 'уеэоаыяиюё', poem[i])))
-flag = False
+flag = True
 for i in range(len(only_vowels) - 1):
-    if len(only_vowels[i]) == len(only_vowels[i+1]):
-        flag = True
+    if len(only_vowels[i]) != len(only_vowels[i+1]):
+        flag = False
 print('Парам пам-пам' if flag == True else 'Пам парам')
