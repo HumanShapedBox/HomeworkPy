@@ -17,4 +17,5 @@ flag = True
 for i in range(len(only_vowels) - 1):
     if len(only_vowels[i]) != len(only_vowels[i+1]):
         flag = False
+        break
 print('Парам пам-пам' if flag == True else 'Пам парам')
