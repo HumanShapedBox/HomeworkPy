@@ -9,7 +9,7 @@ def get_data():
 
 def get_operation_number():
     operation = input().strip()
-    while operation not in ('1', '2', '3', '0'):
+    while operation not in ('1', '2', '3', '4', '5', '0'):
         print('Некорректный ввод. Попробуйте ещё раз: ')
         operation = input().strip()
     return operation
@@ -21,5 +21,11 @@ def perform_operation(operation_number):
         add(get_data())
     elif operation_number == '3':
         print('\n'.join(find(input('Введите фамилию, имя, отчество или номер телефона: ').strip())))
+    elif operation_number == '4':
+        data = input('Введите фамилию, имя, отчество или телефон, которые нужно изменить: ')
+        transformation(data)
+    elif operation_number == '5':
+        user = input('Введите фамилию, имя, отчество или телефон, чтобы удалить контакт: ')
+        delete(user)
     else:
         print('Завершение работы')
